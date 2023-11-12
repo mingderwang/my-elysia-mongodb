@@ -1,18 +1,18 @@
 import { MongoClient, Db } from 'mongodb';
 
 interface User {
-  name: string;
-  age: number;
+  username: string;
   email: string;
+  password: string;
 }
 
 async function createTable() {
-  const url = 'mongodb://localhost:27017';
-  const dbName = 'your_database_name';
+  const url = 'mongodb://127.0.0.1:27017';
+  const dbName = 'db2';
   const collectionName = 'users';
 
   // Connect to MongoDB
-  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  const client = new MongoClient(url, {});
   await client.connect();
 
   // Access the database
